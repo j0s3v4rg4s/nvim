@@ -46,16 +46,6 @@ call plug#end()
 colorscheme gruvbox
 let g:gruvbox_contrast_dark="hard"
 
-" Configuración de coc
-let g:coc_global_extensions = [
-  \ 'coc-tsserver'
-  \ ]
-let g:coc_filetype_map = {
-  \ '': 'html',
-  \ 'javascriptreact.javascript.javascript-react.javascript_react': 'javascriptreact',
-  \ 'typescriptreact.javascript.typescript.javascriptreact.javascript-react.javascript_react': 'typescriptreact'
-  \ }
-
 " IDE configuración
 let mapleader=" "
 
@@ -82,4 +72,32 @@ nnoremap <leader>q :bdelete<CR>
 
 nmap <Leader><Leader>nt :NERDTree<CR>
 nmap <Leader>f :Files<CR>
-nmap <Leader>wq :wq<CR>
+map <Leader>wq :wq<CR>
+nmap <Leader>j :Prettier<CR> 
+map <leader>k :NERDTreeFind<cr>
+let NERDTreeQuitOnOpen=1
+
+" Configuración de coc
+let g:coc_global_extensions = [
+  \ 'coc-json',
+  \ 'coc-tsserver'
+  \ ]
+let g:coc_filetype_map = {
+  \ '': 'html',
+  \ 'javascriptreact.javascript.javascript-react.javascript_react': 'javascriptreact',
+  \ 'typescriptreact.javascript.typescript.javascriptreact.javascript-react.javascript_react': 'typescriptreact'
+  \ }
+if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+  let g:coc_global_extensions += ['coc-prettier']
+endif
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+  let g:coc_global_extensions += ['coc-eslint']
+endif
+
+command! -nargs=0 Prettier :CocCommand prettier.formatFile 
+nnoremap <silent> K :call CocAction('doHover')<CR>
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gr <Plug>(coc-references)
+map <Leader>a :CocAction<CR>
