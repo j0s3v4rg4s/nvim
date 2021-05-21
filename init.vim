@@ -101,3 +101,8 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gr <Plug>(coc-references)
 map <Leader>a :CocAction<CR>
+
+
+
+:tnoremap <Esc> <C-\><C-n> :bdelete!<CR>
+
