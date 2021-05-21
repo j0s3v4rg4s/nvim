@@ -40,6 +40,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+  Plug 'neoclide/npm.nvim'
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'mattn/emmet-vim'
 call plug#end()
 
 " Configuración gruvbox
@@ -80,7 +83,9 @@ let NERDTreeQuitOnOpen=1
 " Configuración de coc
 let g:coc_global_extensions = [
   \ 'coc-json',
-  \ 'coc-tsserver'
+  \ 'coc-tsserver',
+  \ 'coc-angular',
+  \ 'coc-html'
   \ ]
 let g:coc_filetype_map = {
   \ '': 'html',

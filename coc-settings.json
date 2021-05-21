@@ -1,4 +1,6 @@
 {
   "eslint.filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
-  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown"]
+  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown"],
+  "angular.experimental-ivy": true,
+  "html.autoClosingTags": true
 }
